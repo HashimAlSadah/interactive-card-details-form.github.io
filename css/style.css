@@ -1,0 +1,370 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+@media (min-width: 1000px) {
+  .main {
+    display: flex;
+    min-height: 100vh;
+  }
+}
+.colored-container {
+  padding: 2em 1em 1em;
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.colored-container-wraper {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.back-card {
+  position: relative;
+  max-width: 290px;
+  margin-left: auto;
+}
+
+.back-card p {
+  position: absolute;
+  top: 50%;
+  right: 13%;
+  transform: translate(0, -50%);
+  font-size: 0.9rem;
+}
+
+.front-card {
+  position: relative;
+  max-width: 290px;
+  top: -4.3em;
+  margin-bottom: -7.6em;
+}
+
+.front-card::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 1em;
+  left: 1em;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.front-card::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 1.5em;
+  left: 3.5em;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.front-card__text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 1em;
+}
+
+.front-card h1 {
+  font-size: clamp(0.8rem, 6.9vw, 1.4rem);
+}
+
+.front-card__text .name-date {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 500px) {
+  .colored-container-wraper {
+    max-width: 500px;
+  }
+  .front-card, .back-card {
+    max-width: 70%;
+  }
+  .front-card::before {
+    width: 40px;
+    height: 40px;
+    top: 1.5em;
+  }
+  .front-card::after {
+    width: 18px;
+    height: 18px;
+    top: 2.2em;
+    left: 4em;
+  }
+  .front-card h1 {
+    font-size: clamp(1.4rem, 5.1vw, 1.7rem);
+  }
+}
+@media (min-width: 1000px) {
+  .colored-container {
+    flex: 1 1 35%;
+    padding: unset;
+  }
+  .colored-container-wraper,
+.front-card, .back-card {
+    max-width: unset;
+  }
+  .colored-container-wraper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5em;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .back-card {
+    position: relative;
+    margin-left: unset;
+    left: 50%;
+  }
+  .back-card p,
+.front-card .name-date {
+    font-size: 1.2vw;
+  }
+  .front-card {
+    position: relative;
+    top: unset;
+    left: 30%;
+    margin-bottom: 0;
+  }
+  .front-card::before {
+    height: unset;
+    width: 12%;
+    aspect-ratio: 1;
+    top: 10%;
+    left: 5%;
+  }
+  .front-card::after {
+    height: unset;
+    width: 5%;
+    aspect-ratio: 1;
+    top: 18%;
+    left: 18%;
+  }
+  .front-card h1 {
+    font-size: 2.1vw;
+    letter-spacing: 0.125vw;
+  }
+}
+.white-bg-container {
+  margin: 5em 1.5em 1em;
+}
+
+.credit-card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.credit-card.inactive {
+  display: none;
+}
+
+.credit-card label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: hsl(278deg, 68%, 11%);
+}
+
+.credit-card span {
+  position: relative;
+  display: block;
+  margin-top: 0.5em;
+  padding: 1.5px;
+  background-image: linear-gradient(to right, hsl(270deg, 3%, 87%), hsl(270deg, 3%, 87%));
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 7px;
+}
+
+.credit-card span.active {
+  background-image: linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+}
+
+.credit-card span.error {
+  background-image: linear-gradient(to right, hsl(0deg, 100%, 66%), hsl(0deg, 100%, 66%));
+}
+
+.credit-card input {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 0.5em;
+  font-size: 1rem;
+  color: hsl(278deg, 68%, 11%);
+}
+
+.credit-card input::placeholder {
+  color: hsl(279deg, 6%, 55%);
+}
+
+.credit-card input:active,
+.credit-card input:focus {
+  outline: none;
+}
+
+.credit-card .card-number {
+  margin: 0.75em 0;
+}
+
+.credit-card .date-cvc {
+  display: flex;
+  gap: 0.75em;
+}
+@media (max-width: 340px) {
+  .credit-card .date-cvc {
+    flex-wrap: wrap;
+  }
+}
+
+.credit-card .date-cvc > div {
+  flex: 1 1 50%;
+}
+
+.credit-card .date .input-fields {
+  display: flex;
+  gap: 0.5em;
+}
+
+.error-message {
+  opacity: 0;
+  color: hsl(0deg, 100%, 66%);
+  font-size: 0.75rem;
+  transition: opacity 0.4s ease;
+}
+
+.error-message.active {
+  opacity: 1;
+}
+
+@media (min-width: 1000px) {
+  .white-bg-container {
+    margin: unset;
+  }
+  .white-bg-container {
+    flex: 1 1 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+  }
+  .credit-card {
+    max-width: 55%;
+    margin: unset;
+  }
+  .credit-card label {
+    font-size: 1.3vw;
+  }
+  .credit-card input {
+    font-size: 1.4vw;
+    min-height: 3.5vw;
+  }
+  .error-message {
+    font-size: 1vw;
+  }
+}
+.credit-card button,
+.thank-you button {
+  display: block;
+  width: 100%;
+  min-height: 45px;
+  margin-top: 0.75em;
+  font-size: 1.1rem;
+  color: white;
+  background-color: hsl(278deg, 68%, 11%);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.thank-you button {
+  margin-top: 2em;
+}
+
+@media (min-width: 1000px) {
+  .credit-card button,
+.thank-you button {
+    font-size: 1.4vw;
+    min-height: 3.5vw;
+  }
+}
+.thank-you {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.thank-you.active {
+  display: unset;
+}
+
+.thank-you img {
+  max-width: 80px;
+  margin: 0 auto;
+}
+
+.thank-you__text {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.thank-you h2 {
+  color: hsl(278deg, 68%, 11%);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.8rem;
+  margin: 1em 0 0.5em;
+}
+
+.thank-you p {
+  color: hsl(279deg, 6%, 55%);
+}
+
+@media (min-width: 1000px) {
+  .thank-you {
+    max-width: 60%;
+  }
+  .thank-you img {
+    max-width: 7vw;
+  }
+  .thank-you h2 {
+    font-size: 2.8vw;
+  }
+  .thank-you p {
+    font-size: 1.4vw;
+  }
+}/*# sourceMappingURL=style.css.map */

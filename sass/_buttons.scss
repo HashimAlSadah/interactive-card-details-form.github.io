@@ -1,0 +1,29 @@
+@use "./var";
+@use "./mixin";
+
+.credit-card button,
+.thank-you button
+{
+    display: block;
+    width: 100%;
+    min-height: 45px;
+    margin-top: 0.75em;
+    font-size: 1.1rem;
+    color: white;
+    background-color: var.$Very-dark-violet;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.thank-you button{
+    margin-top: 2em; 
+}
+
+@include mixin.minWidthScreenStyle(var.$desktop-break-point){
+    .credit-card button, 
+    .thank-you button{
+        font-size: 1.4vw;
+        min-height: 3.5vw;
+    }
+}

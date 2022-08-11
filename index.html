@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="shortcut icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');</style> 
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script src="./Js_src/main.js" type="module" async></script>
+</head>
+<body>
+  <div class="container">
+    <main class="main">
+      <div class="colored-container">
+        <div class="colored-container-wraper">
+
+          <div class="back-card">
+            <img src="./images/bg-card-back.png" alt="credit card displayed from the back side">
+            <p class="displayed-cvc">000</p>
+          </div>
+  
+          <div class="front-card">
+            <img src="./images/bg-card-front.png" alt="credit card displayed from the front side">
+            <div class="front-card__text">
+              <h1 class="displayed-card-number">0000 0000 0000 0000</h1>
+              <div class="name-date">
+                <p class="displayed-name">Jane Appleseed</p>
+                <p><span class="displayed-month">00</span>/<span class="displayed-year">00</span></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="white-bg-container">
+        <form action="credit-card" class="credit-card">
+          <div class="name">
+            <label for="name">Cardholder Name</label>
+            <span><input id="name" type="text" maxlength="22" placeholder="e.g. Jane Appleseed"></span>
+            <small class="error-message" id="name-error">Name cannot be blank. Enter letters only.</small>
+          </div>
+          <div class="card-number">
+            <label for="card-number">Card Number</label>
+            <span><input id="card-number" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="19"></span>
+            <small class="error-message" id="card-number-error">Wrong Format. Numbers only.</small>
+          </div>
+          <div class="date-cvc">
+            <div class="date">
+              <label for="date-cvc">Exp. Date (MM/YY)</label>
+              <div class="input-fields">
+                <span><input id="date-cvc" class="month" type="text" placeholder="MM" maxlength="2"></span>
+                <span><input type="text" class="year" placeholder="YY" maxlength="2"></span>
+              </div>
+              <small class="error-message" id="date-error">cannot be blank.</small>
+            </div>
+            <div class="cvc">
+              <label for="cvc">CVC</label>
+              <span><input id="cvc" type="text" placeholder="e.g. 123" maxlength="3"></span>
+              <small class="error-message" id="cvc-error">cannot be blank.</small>
+            </div>
+          </div>
+          <button id="confirm-btn">Confirm</button>
+        </form>
+
+        <div class="thank-you">
+          <img src="./images/icon-complete.svg" alt="check mark">
+          <div class="thank-you__text">
+            <h2 class="thank-you__title">Thank you!</h2>
+            <p>We've added your credit card details</p>
+          </div>  
+          <button id="continue">Continue</button>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer class="attribution footer">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/HashimAlSadah" target="_blank">HashimAlSadah</a>.
+  </footer>
+</body>
+</html>

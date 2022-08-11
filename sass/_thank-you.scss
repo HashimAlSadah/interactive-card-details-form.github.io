@@ -1,0 +1,57 @@
+@use "./var";
+@use "./mixin";
+
+.thank-you{
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.thank-you.active{
+    display: unset;
+}
+
+.thank-you img{
+    max-width: 80px;
+    margin: 0 auto;
+}
+
+.thank-you__text{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.thank-you h2{
+    color: var.$Very-dark-violet;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1.8rem;
+    margin: 1em 0 0.5em;
+}
+
+.thank-you p{
+    color: var.$Dark-grayish-violet;
+}
+
+@include mixin.minWidthScreenStyle(var.$desktop-break-point){
+    .thank-you{
+        max-width: 60%;
+    }
+
+    .thank-you img{
+        max-width: 7vw;
+    }
+
+    .thank-you h2{
+        font-size: 2.8vw;
+    }
+
+    .thank-you p{
+        font-size: 1.4vw;
+    }
+}
+
+
+

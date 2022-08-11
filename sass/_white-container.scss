@@ -1,0 +1,134 @@
+@use "./var";
+@use "./mixin";
+
+.white-bg-container{
+    margin: 5em 1.5em 1em;
+}
+
+.credit-card{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.credit-card.inactive{
+    display: none;
+}
+
+.credit-card label{
+    text-transform: uppercase;
+    letter-spacing: 1.0px;
+    font-size: 0.85rem;
+    color: var.$Very-dark-violet;
+}
+
+.credit-card span{
+    position: relative;
+    display: block;
+    margin-top: 0.5em;
+    padding: 1.5px;
+    background-image: var.$inactive-input-border;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 7px;
+}
+
+.credit-card span.active{
+    background-image: var.$active-input-border;
+}
+
+.credit-card span.error{
+    background-image: var.$error-input-border;
+}
+
+.credit-card input{
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 0.5em;
+    font-size: 1.0rem;
+    color: var.$Very-dark-violet;
+}
+
+.credit-card input::placeholder{
+    color: var.$Dark-grayish-violet;
+}
+ 
+
+.credit-card input:active,
+.credit-card input:focus{
+    outline: none;
+}
+
+.credit-card .card-number{
+    margin: 0.75em 0;
+}
+
+.credit-card .date-cvc{
+    display: flex;
+    gap: 0.75em;
+    @include mixin.maxWidthScreenStyle(340px){
+        flex-wrap: wrap;
+    }
+}
+
+.credit-card .date-cvc > div{
+    flex: 1 1 50%;
+}
+
+.credit-card .date .input-fields{
+    display: flex;
+    gap: 0.5em;
+}
+
+
+.error-message{
+    // display: none;
+    opacity: 0;
+    color: var.$Red__input-errors;
+    font-size: 0.75rem;
+    transition: opacity 0.4s ease;
+}
+
+.error-message.active{
+    opacity: 1;
+}
+
+@include mixin.minWidthScreenStyle(var.$desktop-break-point){
+
+    .white-bg-container{
+        margin: unset;
+    }
+
+    .white-bg-container{
+        flex: 1 1 65%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border: 1px solid red;
+        margin-left: 15%;
+    }
+
+    .credit-card{
+        max-width: 55%;
+        margin: unset;
+        // border: 1px solid black;
+    }
+
+    .credit-card label{
+        font-size: 1.3vw;
+    }
+
+    .credit-card input{
+        font-size: 1.4vw;
+        min-height: 3.5vw;
+    }
+
+    .error-message{
+        font-size: 1vw;
+    }
+
+}
+

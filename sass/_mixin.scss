@@ -1,0 +1,11 @@
+@mixin minWidthScreenStyle($min-width){
+    @media(min-width: $min-width){
+        @content;
+    }
+}
+
+@mixin maxWidthScreenStyle($max-width){
+    @media(max-width: $max-width){
+        @content;
+    }
+}
